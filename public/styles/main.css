@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Neuton:wght@200&display=swap');
+
+
+:root {
+    --light-color-1: #E0BAFF;
+    --light-color-2: #FFF8BA;
+    --dark-color-1: #622396;
+    --dark-color-2: #968B23;
+    --pop_out-color: #232F96;
+    --background: repeating-linear-gradient(90deg, hsla(64, 83%, 54%, 0.05) 0px, hsla(64, 83%, 54%, 0.05) 1px, transparent 1px, transparent 11px, hsla(64, 83%, 54%, 0.05) 11px, hsla(64, 83%, 54%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(135deg, hsla(64, 83%, 54%, 0.05) 0px, hsla(64, 83%, 54%, 0.05) 1px, transparent 1px, transparent 11px, hsla(64, 83%, 54%, 0.05) 11px, hsla(64, 83%, 54%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(45deg, hsla(64, 83%, 54%, 0.05) 0px, hsla(64, 83%, 54%, 0.05) 1px, transparent 1px, transparent 11px, hsla(64, 83%, 54%, 0.05) 11px, hsla(64, 83%, 54%, 0.05) 12px, transparent 12px, transparent 32px), repeating-linear-gradient(180deg, hsla(64, 83%, 54%, 0.05) 0px, hsla(64, 83%, 54%, 0.05) 1px, transparent 1px, transparent 11px, hsla(64, 83%, 54%, 0.05) 11px, hsla(64, 83%, 54%, 0.05) 12px, transparent 12px, transparent 32px), linear-gradient(135deg, rgba(158, 27, 27, 0.84), rgba(82, 77, 249, 0.57));
+}
+
+h1,
+h2,
+h3,
+h4 {
+    line-height: 1.2;
+    font-family: 'Neuton', serif;
+    color: var(--dark-color-1);
+}
+
+body {
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: 'Mulish', sans-serif;
+    color: var(--light-color-1);
+    background-image: var(--background);
+    
+    display: grid;
+    grid-template-areas:
+        "head nav designs"
+        "main main main"
+        "foot foot foot";
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto 1fr;
+}
+
+body>* {
+    padding-left: 4rem;
+    padding-right: 0;
+}
+
+body>header {
+    grid-area: head;
+}
+
+body>nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+body>nav ul li {
+    display: inline;
+    padding-right: 1rem;
+}
+
+body>main {
+    grid-area: main;
+}
+
+body>footer {
+    grid-area: footer;
+    /* background-color: yellow;
+    align-self: auto; */
+}
+
+body #portfolio ul #portfolioItems {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    list-style-type: none;
+    padding: 0;
+}
+
+p,
+dt,
+dd {
+    max-width: 50em;
+    min-width: 20em;
+}
+
+a {
+    color: var(--dark-color-1);
+    text-decoration-color: var(--light-color-1);
+}
+
+a:hover {
+    color: var(--light-color-1);
+    text-decoration-color: var(--dark-color-1);
+}
+
+header,
+footer {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+#about img {
+    height: 15 em;
+}
+
+#nav {
+    grid-area: nav;
+}
+
+#designs {
+    grid-area: designs;
+    color: var(--light-color-2);
+}
+
+#designs>*>*:hover {
+    grid-area: designs;
+    text-decoration-line: underline;
+    text-decoration-color: var(--dark-color-2);
+
+}
+
+@media (min-width: 390px) {
+    body #portfolio ul #portfolioItems li {
+        flex-basis: 50%;
+        padding-right: 2%;
+    }
+
+    p,
+    dt,
+    dd {
+        min-width: 30px;
+    }
+
+    body {
+        grid-template-areas:
+            "head nav nav"
+            "designs designs designs"
+            "main main main"
+            "foot foot foot";
+    }
+}
+
+@media (min-width: 768px) {
+
+    p,
+    dt,
+    dd {
+        min-width: 30em;
+    }
+
+    #designs {
+        min-width: fit-content;
+    }
+
+    body {
+        grid-template-areas:
+            "head nav designs"
+            "main main main"
+            "foot foot foot";
+    }
+}
+
+@media (min-width: 992px) {
+    body {
+        grid-template-areas:
+            "head nav designs"
+            "main main main"
+            "foot foot foot";
+    }
+}
